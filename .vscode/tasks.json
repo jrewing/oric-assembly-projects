@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build ORIC Program",
+      "type": "shell",
+      "command": "${workspaceFolder}/build.sh",
+      "args": ["${fileBasename}"],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build and Run in Oricutron",
+      "type": "shell",
+      "command": "${workspaceFolder}/build.sh",
+      "args": ["${fileBasename}", "--run"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build Hello World",
+      "type": "shell",
+      "command": "${workspaceFolder}/build.sh",
+      "args": ["hello.s"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Oricutron",
+      "type": "shell",
+      "command": "/Users/marvin/oric/oricutron/build/Oricutron",
+      "args": [
+        "--tape",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.tap"
+      ],
+      "group": "test",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
+    }
+  ]
+}

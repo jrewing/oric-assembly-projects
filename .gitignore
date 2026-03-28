@@ -1,0 +1,10 @@
+# Build outputs
+build/
+*.o
+*.bin
+
+# macOS
+.DS_Store
+
+# Oricutron (don't include the emulator itself)
+oricutron/
